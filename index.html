@@ -1,240 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="white" />
-    <title>Short Form Audio - Definition</title>
+    <meta name="theme-color" content="#ffffff">
 
-    <!-- Favicon and Apple Touch Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <title>Short-form audio — definition and meaning</title>
+    <meta name="description" content="Short-form audio (noun): audio made to be heard in 60 seconds or less, complete on its own. Definition, usage, and the open specification for the format.">
+    <link rel="canonical" href="https://shortformaudio.com/">
+
+    <!-- Link previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Short-Form Audio">
+    <meta property="og:title" content="short-form audio (noun)">
+    <meta property="og:description" content="Audio made to be heard in 60 seconds or less, complete on its own.">
+    <meta property="og:url" content="https://shortformaudio.com/">
+    <meta property="og:image" content="https://shortformaudio.com/images/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Dictionary entry: short-form audio, noun. Audio made to be heard in 60 seconds or less, complete on its own.">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Icons -->
+    <link rel="icon" href="images/favicon/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
     <link rel="manifest" href="images/favicon/site.webmanifest">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #ffffff;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 650px;
-            width: 100%;
-            padding: 40px;
-        }
-        
-        .header-group {
-            margin-bottom: 40px;
-        }
 
-        .word {
-            font-size: 52px;
-            font-weight: 700;
-            color: #000000;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-            line-height: 1;
-        }
-        
-        .phonetic-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px; /* Added spacing for the new summary definition */
-        }
+    <link rel="stylesheet" href="css/site.css">
 
-        .phonetic {
-            font-size: 18px;
-            color: #5f6368;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        }
-
-        /* Primary/Overarching Definition */
-        .summary-definition {
-            font-size: 20px;
-            color: #202124;
-            font-weight: 400;
-        }
-
-        /* Speaker Icon Styling */
-        .audio-btn {
-            background-color: #f1f3f4; /* Very light grey */
-            border: none;
-            cursor: pointer;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.2s;
-            color: #202124; /* Black */
-        }
-
-        .audio-btn:hover {
-            background-color: #e3e5e8; /* Slightly darker */
-        }
-
-        .audio-btn svg {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
-        }
-        
-        .definition-block {
-            margin-bottom: 35px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #f1f3f4;
-        }
-
-        .part-of-speech-header {
-            display: flex;
-            align-items: baseline;
-            margin-bottom: 15px;
-            gap: 10px;
-        }
-        
-        .part-of-speech {
-            font-size: 14px;
-            font-weight: 700;
-            font-style: italic;
-            color: #000;
-        }
-
-        .forms {
-            font-size: 13px;
-            color: #70757a;
-        }
-
-        .meaning-group {
-            margin-bottom: 20px;
-        }
-        
-        .meaning {
-            font-size: 16px;
-            line-height: 1.5;
-            color: #202124;
-            font-weight: 500; 
-            margin-bottom: 8px;
-        }
-        
-        .example {
-            font-size: 15px;
-            color: #5f6368;
-            font-style: italic;
-            padding-left: 12px;
-            margin-bottom: 6px;
-            border-left: 2px solid #dadce0;
-        }
-        
-        .link {
-            text-align: left;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #ebebeb;
-        }
-        
-        .link a {
-            color: #70757a;
-            text-decoration: none;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-        }
-        
-        .link a:hover {
-            color: #000;
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-          .container {
-            padding: 10px;
-          }
-        }
-        
-    </style>
+    <!-- Structured data: marks this page up as the definition of a term -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "DefinedTerm",
+                "@id": "https://shortformaudio.com/#short-form-audio",
+                "name": "short-form audio",
+                "alternateName": ["short form audio", "shortform audio"],
+                "description": "Audio made to be heard in 60 seconds or less, complete on its own rather than an excerpt of something longer.",
+                "url": "https://shortformaudio.com/",
+                "inDefinedTermSet": "https://shortformaudio.com/glossary/"
+            },
+            {
+                "@type": "DefinedTerm",
+                "@id": "https://shortformaudio.com/#kabloie",
+                "name": "kabloie",
+                "description": "Informal. A piece of short-form audio; a short audio clip. As a verb: to record, publish, or send a short audio clip.",
+                "url": "https://shortformaudio.com/#kabloie",
+                "inDefinedTermSet": "https://shortformaudio.com/glossary/"
+            },
+            {
+                "@type": "WebSite",
+                "name": "Short-Form Audio",
+                "url": "https://shortformaudio.com/",
+                "publisher": { "@type": "Organization", "name": "Kabloie", "url": "https://kabloie.com" }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <div class="container">
-        
-        <div class="header-group">
-            <div class="word">Kabloie</div>
-            
-            <div class="phonetic-wrapper">
-                <span class="phonetic">/kɑːˈbluːi/</span>
-                <button class="audio-btn" aria-label="Listen to pronunciation" onclick="playAudio()">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-                    </svg>
-                </button>
-            </div>
 
-            <!-- Overarching Definition -->
-            <div class="summary-definition">Short-form audio.</div>
-        </div>
-        
-        <!-- Noun Section -->
-        <div class="definition-block">
-            <div class="part-of-speech-header">
-                <span class="part-of-speech">noun</span>
-                <span class="forms">plural: <strong>kabloies</strong></span>
-            </div>
-            
-            <div class="meaning-group">
-                <div class="meaning">1. Short-form audio content; a short audio clip.</div>
-                <div class="example">"Did you hear that new kabloie?"</div>
-                <div class="example">"Her latest kabloie went viral within minutes."</div>
-            </div>
-        </div>
-        
-        <!-- Verb Section -->
-        <div class="definition-block" style="border-bottom: 0;">
-            <div class="part-of-speech-header">
-                <span class="part-of-speech">verb</span>
-                <span class="forms">past tense: <strong>kabloied</strong>; present participle: <strong>kabloieing</strong></span>
-            </div>
+        <header class="site-nav">
+            <a href="./" aria-current="page">Short-form audio</a>
+            <nav aria-label="Site">
+                <a href="spec/">Spec</a>
+                <a href="glossary/">Glossary</a>
+            </nav>
+        </header>
 
-            <div class="meaning-group">
-                <div class="meaning">1. To record, publish, or send a short audio clip.</div>
-                <div class="example">"Just kabloie me the details later."</div>
-                <div class="example">"I was too tired to type, so I just kabloied my thoughts."</div>
-            </div>
-        </div>
-        
-        <div class="link">
-            <a href="https://kabloie.com" target="_blank">Read More at Kabloie.com &rarr;</a>
-        </div>
+        <main>
+            <!-- Entry 1: the category -->
+            <article class="entry" id="short-form-audio">
+                <div class="header-group">
+                    <h1 class="word">short-form audio</h1>
+                    <div class="phonetic-wrapper">
+                        <span class="phonetic">/ˌʃɔːrt fɔːrm ˈɔːdioʊ/</span>
+                    </div>
+                    <p class="summary-definition">Audio made to be heard in 60 seconds or less, complete on its own.</p>
+                </div>
+
+                <section class="definition-block">
+                    <div class="part-of-speech-header">
+                        <span class="part-of-speech">noun</span>
+                        <span class="forms">also: <strong>short form audio</strong>, <strong>shortform audio</strong></span>
+                    </div>
+
+                    <div class="meaning-group">
+                        <p class="meaning">1. Audio made to be heard in 60 seconds or less; a clip that stands on its own rather than an excerpt of something longer.</p>
+                        <p class="example">"Most of what I listen to on my commute is short-form audio."</p>
+                        <p class="example">"She answered the whole thread with thirty seconds of short-form audio."</p>
+                    </div>
+
+                    <div class="meaning-group">
+                        <p class="meaning">2. The format of such audio, as distinct from long-form audio like podcasts, radio, and audiobooks.</p>
+                        <p class="example">"Short-form audio is to podcasts what the photo is to film."</p>
+                    </div>
+
+                    <p class="related"><span class="label">Informal:</span> <a href="#kabloie">kabloie</a></p>
+                    <p class="related"><span class="label">Compare:</span> <a href="glossary/#long-form-audio">long-form audio</a>, <a href="glossary/#podcast">podcast</a>, <a href="glossary/#voice-note">voice note</a></p>
+                </section>
+            </article>
+
+            <!-- Entry 2: the word for one piece of it -->
+            <article class="entry" id="kabloie">
+                <div class="header-group">
+                    <h2 class="word secondary">kabloie</h2>
+                    <div class="phonetic-wrapper">
+                        <span class="phonetic">/kɑːˈbluːi/</span>
+                        <button class="audio-btn" type="button" aria-label="Listen to pronunciation of kabloie" onclick="playAudio(this)">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                            </svg>
+                        </button>
+                        <span class="register">informal</span>
+                    </div>
+                    <p class="summary-definition">A piece of short-form audio.</p>
+                </div>
+
+                <section class="definition-block">
+                    <div class="part-of-speech-header">
+                        <span class="part-of-speech">noun</span>
+                        <span class="forms">plural: <strong>kabloies</strong></span>
+                    </div>
+                    <div class="meaning-group">
+                        <p class="meaning">1. A piece of short-form audio; a short audio clip.</p>
+                        <p class="example">"Did you hear that new kabloie?"</p>
+                        <p class="example">"Her latest kabloie went viral within minutes."</p>
+                    </div>
+                </section>
+
+                <section class="definition-block">
+                    <div class="part-of-speech-header">
+                        <span class="part-of-speech">verb</span>
+                        <span class="forms">past tense: <strong>kabloied</strong>; present participle: <strong>kabloieing</strong></span>
+                    </div>
+                    <div class="meaning-group">
+                        <p class="meaning">1. To record, publish, or send a short audio clip.</p>
+                        <p class="example">"Just kabloie me the details later."</p>
+                        <p class="example">"I was too tired to type, so I just kabloied my thoughts."</p>
+                    </div>
+                    <p class="origin"><span class="label">Origin:</span> from <a href="https://kabloie.com/?utm_source=shortformaudio.com&amp;utm_medium=referral&amp;utm_campaign=definition" target="_blank" rel="noopener">Kabloie</a>, the short-form audio app.</p>
+                </section>
+            </article>
+
+            <nav class="more" aria-label="More about the format">
+                <a href="spec/">
+                    <span class="more-title">The specification &rarr;</span>
+                    <span class="more-desc">Length, sound, and metadata for short-form audio. Draft 0.1.</span>
+                </a>
+                <a href="glossary/">
+                    <span class="more-title">The glossary &rarr;</span>
+                    <span class="more-desc">The vocabulary of the format, A to Z.</span>
+                </a>
+            </nav>
+
+            <details class="cite">
+                <summary>Cite this definition</summary>
+                <blockquote>"short-form audio, n." <em>Short-Form Audio</em>, Kabloie, 2026, shortformaudio.com.</blockquote>
+            </details>
+        </main>
+
+        <footer class="site-footer">
+            <span>Maintained by <a href="https://kabloie.com/?utm_source=shortformaudio.com&amp;utm_medium=referral&amp;utm_campaign=footer" target="_blank" rel="noopener">Kabloie</a></span>
+            <a href="https://kabloie.com/?utm_source=shortformaudio.com&amp;utm_medium=referral&amp;utm_campaign=definition" target="_blank" rel="noopener">Listen at Kabloie.com &rarr;</a>
+        </footer>
     </div>
 
     <script>
         const audio = new Audio('audio/kabloiesound.mp3');
-    
-        function playAudio() {
-            const btn = document.querySelector('.audio-btn');
-            
-            // Visual feedback
-            btn.style.backgroundColor = '#d2d4d8';
-            setTimeout(() => {
-                btn.style.backgroundColor = '';
-            }, 200);
-            
-            // Restart audio from beginning immediately
+
+        function playAudio(btn) {
+            btn.classList.add('pressed');
+            setTimeout(() => btn.classList.remove('pressed'), 200);
             audio.currentTime = 0;
             audio.play().catch(e => console.log("Audio playback error:", e));
         }

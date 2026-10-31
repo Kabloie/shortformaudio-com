@@ -19,11 +19,19 @@ Antonio owns architecture, data, and product taste. Agents own execution.
 
 ## This repo
 
-- A single static page, `index.html`, served at shortformaudio.com — a definition
-  page for "short form audio". Assets in `audio/` and `images/`.
+- A small static site served at shortformaudio.com — the home of the short-form
+  audio format, maintained by Kabloie. Neutral where it defines (definition, spec),
+  branded where it can be (kabloie entry, footer).
+  - `index.html` — the definition: "short-form audio" (n.), then "kabloie" (informal)
+  - `spec/` — Short-Form Audio Specification (versioned draft; bump version + changelog on edits)
+  - `glossary/` — vocabulary of the format, A–Z
+  - `404.html`, `robots.txt`, `sitemap.xml` (add new pages to the sitemap)
+  - Shared styles in `css/site.css`; assets in `audio/` and `images/` (`images/og.png` is the link-preview card)
+- Taste rules: no popups, banners, or ads; one idea per page; keep pages short.
 - **This repo is public.** Never commit secrets, internal notes, or anything about
   Kabloie that isn't already public.
-- No build step. Verify by opening `index.html` in a browser at phone and desktop widths.
+- No build step. Pages link with relative paths and folder URLs (`spec/`), so preview
+  with a local server (`python3 -m http.server`), not `file://`. Check phone and desktop widths.
 
 ## The Kabloie repos
 

@@ -1,0 +1,572 @@
+/* shortformaudio.com — shared styles. No build step: edit and reload. */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ink: #000000;
+    --text: #202124;
+    --muted: #5f6368;
+    --faint: #70757a;
+    --rule: #ebebeb;
+    --rule-soft: #f1f3f4;
+    --quote: #dadce0;
+    --chip: #f1f3f4;
+    --chip-hover: #e3e5e8;
+    --chip-active: #d2d4d8;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #ffffff;
+    color: var(--text);
+    padding: 20px;
+    -webkit-text-size-adjust: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+.container {
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 24px 40px 40px;
+}
+
+/* ---------- Site navigation ---------- */
+
+.site-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 72px;
+}
+
+.site-nav a {
+    color: var(--faint);
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+    color: var(--ink);
+}
+
+.site-nav nav {
+    display: flex;
+    gap: 20px;
+}
+
+/* ---------- Dictionary entry ---------- */
+
+.entry {
+    margin-bottom: 56px;
+}
+
+.header-group {
+    margin-bottom: 40px;
+}
+
+.word {
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+    line-height: 1.05;
+}
+
+.word.secondary {
+    font-size: 40px;
+}
+
+.phonetic-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.phonetic {
+    font-size: 18px;
+    color: var(--muted);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.register {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--muted);
+}
+
+.summary-definition {
+    font-size: 20px;
+    color: var(--text);
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.audio-btn {
+    background-color: var(--chip);
+    border: none;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    color: var(--text);
+    flex-shrink: 0;
+}
+
+.audio-btn:hover {
+    background-color: var(--chip-hover);
+}
+
+.audio-btn.pressed {
+    background-color: var(--chip-active);
+}
+
+.audio-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.definition-block {
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--rule-soft);
+}
+
+.definition-block:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+
+.part-of-speech-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin-bottom: 15px;
+    gap: 4px 10px;
+}
+
+.part-of-speech {
+    font-size: 14px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--ink);
+}
+
+.forms {
+    font-size: 13px;
+    color: var(--faint);
+}
+
+.meaning-group {
+    margin-bottom: 20px;
+}
+
+.meaning {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.example {
+    font-size: 15px;
+    line-height: 1.45;
+    color: var(--muted);
+    font-style: italic;
+    padding-left: 12px;
+    margin-bottom: 6px;
+    border-left: 2px solid var(--quote);
+}
+
+.related {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+.related .label {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.related a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--quote);
+    text-underline-offset: 3px;
+}
+
+.related a:hover {
+    text-decoration-color: currentColor;
+}
+
+.origin {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+.origin .label {
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* ---------- "More" links and footer ---------- */
+
+.more {
+    border-top: 1px solid var(--rule);
+}
+
+.more a {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+    text-decoration: none;
+    color: var(--text);
+}
+
+.more a:hover .more-title {
+    text-decoration: underline;
+}
+
+.more-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.more-desc {
+    font-size: 14px;
+    color: var(--muted);
+    text-align: right;
+}
+
+.cite {
+    margin-top: 40px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.cite summary {
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    color: var(--faint);
+    list-style: none;
+}
+
+.cite summary::-webkit-details-marker {
+    display: none;
+}
+
+.cite summary::after {
+    content: " +";
+}
+
+.cite[open] summary::after {
+    content: " \2212";
+}
+
+.cite summary:hover {
+    color: var(--ink);
+}
+
+.cite blockquote {
+    margin-top: 12px;
+    padding: 14px 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    line-height: 1.55;
+    color: var(--text);
+    user-select: all;
+}
+
+.site-footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+}
+
+.site-footer,
+.site-footer a {
+    color: var(--faint);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: var(--ink);
+    text-decoration: underline;
+}
+
+/* ---------- Long-form document pages (spec, glossary) ---------- */
+
+.doc-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    margin-bottom: 12px;
+}
+
+.doc-meta {
+    font-size: 13px;
+    color: var(--faint);
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+
+.doc-meta strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.doc-lede {
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--text);
+    margin-bottom: 40px;
+}
+
+.doc h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 44px 0 12px;
+    letter-spacing: -0.2px;
+}
+
+.doc h2 .num {
+    color: var(--faint);
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.doc p,
+.doc li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.doc p {
+    margin-bottom: 12px;
+}
+
+.doc ul,
+.doc ol {
+    padding-left: 22px;
+    margin-bottom: 12px;
+}
+
+.doc li {
+    margin-bottom: 6px;
+}
+
+.doc .kw {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+.doc code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 14px;
+    background: #f1f3f4;
+    padding: 1px 5px;
+    border-radius: 4px;
+}
+
+.doc pre {
+    background: #f8f9fa;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 16px;
+    overflow-x: auto;
+    margin: 8px 0 16px;
+}
+
+.doc pre code {
+    background: none;
+    padding: 0;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.doc table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 16px;
+    font-size: 15px;
+}
+
+.doc th,
+.doc td {
+    text-align: left;
+    padding: 10px 12px 10px 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    line-height: 1.45;
+}
+
+.doc th {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--faint);
+    font-weight: 600;
+}
+
+.doc .note {
+    font-size: 14px;
+    color: var(--muted);
+    border-left: 2px solid var(--quote);
+    padding-left: 12px;
+    margin: 12px 0;
+}
+
+.toc {
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--muted);
+    padding: 0;
+    list-style: none;
+    margin-bottom: 8px;
+    columns: 2;
+}
+
+.toc a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.toc a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Glossary ---------- */
+
+.term {
+    padding: 18px 0 10px;
+    scroll-margin-top: 20px;
+}
+
+.term:target {
+    background: linear-gradient(90deg, #fff8e1, #ffffff);
+    margin: 0 -12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 6px;
+}
+
+.term-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
+    margin-bottom: 8px;
+}
+
+.term-word {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.2px;
+}
+
+.term-word a {
+    text-decoration: none;
+}
+
+.term p {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--text);
+}
+
+.term .related {
+    margin-top: 8px;
+}
+
+.doc .letter {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--faint);
+    margin: 36px 0 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 768px) {
+    body {
+        padding: 16px;
+    }
+
+    .container {
+        padding: 8px 0 24px;
+    }
+
+    .site-nav {
+        margin-bottom: 48px;
+    }
+
+    .word {
+        font-size: 40px;
+    }
+
+    .word.secondary {
+        font-size: 34px;
+    }
+
+    .doc-title {
+        font-size: 34px;
+    }
+
+    .more a {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .more-desc {
+        text-align: left;
+    }
+
+    .toc {
+        columns: 1;
+    }
+}

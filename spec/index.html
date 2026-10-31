@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Short-Form Audio Specification — Draft 0.1</title>
+    <meta name="description" content="An open specification for short-form audio: length, structure, sound, accessibility, and metadata for clips of 60 seconds or less.">
+    <link rel="canonical" href="https://shortformaudio.com/spec/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Short-Form Audio">
+    <meta property="og:title" content="Short-Form Audio Specification — Draft 0.1">
+    <meta property="og:description" content="Length, structure, sound, and metadata for clips of 60 seconds or less. Open for comment.">
+    <meta property="og:url" content="https://shortformaudio.com/spec/">
+    <meta property="og:image" content="https://shortformaudio.com/images/og.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="../images/favicon/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../images/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="../css/site.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Short-Form Audio Specification",
+        "version": "0.1",
+        "dateModified": "2026-10-31",
+        "url": "https://shortformaudio.com/spec/",
+        "publisher": { "@type": "Organization", "name": "Kabloie", "url": "https://kabloie.com" }
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+
+        <header class="site-nav">
+            <a href="../">Short-form audio</a>
+            <nav aria-label="Site">
+                <a href="./" aria-current="page">Spec</a>
+                <a href="../glossary/">Glossary</a>
+            </nav>
+        </header>
+
+        <main class="doc">
+            <h1 class="doc-title">Short-Form Audio Specification</h1>
+            <p class="doc-meta">
+                <strong>Draft 0.1</strong> &middot; 31 October 2026 &middot; Open for comment<br>
+                Propose a change on <a href="https://github.com/Kabloie/shortformaudio-com">GitHub</a>.
+            </p>
+
+            <p class="doc-lede">What a piece of short-form audio is, and what makes one work well in any app, feed, or player.</p>
+
+            <ol class="toc">
+                <li><a href="#scope">1. Scope</a></li>
+                <li><a href="#definition">2. Definition</a></li>
+                <li><a href="#length">3. Length</a></li>
+                <li><a href="#structure">4. Structure</a></li>
+                <li><a href="#sound">5. Sound</a></li>
+                <li><a href="#access">6. Accessibility</a></li>
+                <li><a href="#metadata">7. Metadata</a></li>
+                <li><a href="#sharing">8. Sharing</a></li>
+                <li><a href="#changes">9. Changes</a></li>
+            </ol>
+
+            <h2 id="scope"><span class="num">1</span>Scope</h2>
+            <p>This document is for anyone who records, publishes, or plays short-form audio, including people, apps, and tools. It describes the format, not any single product.</p>
+            <p>The key words <span class="kw">MUST</span>, <span class="kw">SHOULD</span>, and <span class="kw">MAY</span> are used as described in <a href="https://www.rfc-editor.org/rfc/rfc2119">RFC 2119</a>.</p>
+
+            <h2 id="definition"><span class="num">2</span>Definition</h2>
+            <p>A piece of short-form audio, informally a <a href="../#kabloie">kabloie</a>, is a single audio clip that:</p>
+            <ul>
+                <li>is 60 seconds long or shorter, and</li>
+                <li>is complete on its own: a listener needs nothing before or after it to understand it.</li>
+            </ul>
+            <p>A trailer, a teaser, or a clip cut from a longer show is short <em>audio</em>, but it is not short-form audio unless it also stands on its own.</p>
+
+            <h2 id="length"><span class="num">3</span>Length</h2>
+            <ul>
+                <li>A clip <span class="kw">MUST</span> be no longer than 60.0 seconds.</li>
+                <li>A clip <span class="kw">SHOULD</span> be at least 3 seconds long.</li>
+                <li>Players <span class="kw">SHOULD</span> show the duration before playback starts.</li>
+            </ul>
+
+            <h2 id="structure"><span class="num">4</span>Structure</h2>
+            <ul>
+                <li>The point of the clip <span class="kw">SHOULD</span> begin within the first 3 seconds. No intros, stings, or sponsor reads first.</li>
+                <li>Leading and trailing silence <span class="kw">SHOULD</span> be trimmed to 0.5 seconds or less.</li>
+                <li>A clip <span class="kw">MAY</span> be a reply to another clip. If it is, it <span class="kw">SHOULD</span> link to the clip it replies to (see <a href="#metadata">Metadata</a>).</li>
+            </ul>
+
+            <h2 id="sound"><span class="num">5</span>Sound</h2>
+            <p>Short-form audio is mostly heard on phone speakers and earbuds, in noisy places, at volumes the listener can't adjust mid-scroll. These targets keep clips consistent with one another.</p>
+            <table>
+                <thead>
+                    <tr><th>Property</th><th>Requirement</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Container / codec</td><td><span class="kw">SHOULD</span> be AAC-LC in <code>.m4a</code>. <span class="kw">MAY</span> be MP3 or Opus.</td></tr>
+                    <tr><td>Sample rate</td><td>44.1 kHz or 48 kHz</td></tr>
+                    <tr><td>Channels</td><td>Mono for speech; stereo <span class="kw">MAY</span> be used for music</td></tr>
+                    <tr><td>Bitrate</td><td>At least 64 kbps mono, or 128 kbps stereo</td></tr>
+                    <tr><td>Loudness</td><td><span class="kw">SHOULD</span> be &minus;16 LUFS integrated, &plusmn;1 LU</td></tr>
+                    <tr><td>True peak</td><td><span class="kw">MUST NOT</span> exceed &minus;1 dBTP</td></tr>
+                </tbody>
+            </table>
+            <p class="note">The loudness target matches common practice for spoken audio on mobile, so a clip played right after a podcast won't jump in volume.</p>
+
+            <h2 id="access"><span class="num">6</span>Accessibility</h2>
+            <ul>
+                <li>Every clip with speech <span class="kw">MUST</span> have a text transcript available alongside it.</li>
+                <li>When a clip is shown with video or an image, captions <span class="kw">SHOULD</span> be on by default.</li>
+                <li>Players <span class="kw">MUST NOT</span> autoplay sound without a user action.</li>
+            </ul>
+
+            <h2 id="metadata"><span class="num">7</span>Metadata</h2>
+            <p>A clip <span class="kw">SHOULD</span> be described with the fields below. Field names are deliberately plain so they map onto any API or file format.</p>
+<pre><code>{
+  "type": "short-form-audio",
+  "spec": "0.1",
+  "url": "https://example.com/clips/abc123",
+  "audio": "https://example.com/clips/abc123.m4a",
+  "duration": 27.4,
+  "title": "Why I stopped typing",
+  "creator": "Ada Example",
+  "language": "en",
+  "created": "2026-10-31T09:41:00Z",
+  "transcript": "I was too tired to type, so…",
+  "replyTo": null
+}</code></pre>
+            <table>
+                <thead>
+                    <tr><th>Field</th><th>Required</th><th>Notes</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>url</code></td><td>Yes</td><td>The clip's permanent page</td></tr>
+                    <tr><td><code>audio</code></td><td>Yes</td><td>Direct link to the audio file</td></tr>
+                    <tr><td><code>duration</code></td><td>Yes</td><td>Seconds, to one decimal place; &le; 60.0</td></tr>
+                    <tr><td><code>creator</code></td><td>Yes</td><td>Who made it</td></tr>
+                    <tr><td><code>transcript</code></td><td>If speech</td><td>Plain text</td></tr>
+                    <tr><td><code>title</code></td><td>No</td><td>Short; 80 characters or fewer</td></tr>
+                    <tr><td><code>language</code></td><td>No</td><td>BCP 47 tag, e.g. <code>en</code>, <code>es-MX</code></td></tr>
+                    <tr><td><code>created</code></td><td>No</td><td>ISO 8601 timestamp</td></tr>
+                    <tr><td><code>replyTo</code></td><td>No</td><td>The <code>url</code> of the clip this one answers</td></tr>
+                </tbody>
+            </table>
+
+            <h2 id="sharing"><span class="num">8</span>Sharing</h2>
+            <ul>
+                <li>Every clip <span class="kw">MUST</span> have a permanent, public URL if it is shared publicly.</li>
+                <li>That page <span class="kw">SHOULD</span> include Open Graph tags, with <code>og:audio</code> pointing at the audio file, so links preview and play in place.</li>
+                <li>That page <span class="kw">SHOULD</span> show the transcript as text, not only inside the player.</li>
+            </ul>
+
+            <h2 id="changes"><span class="num">9</span>Changes</h2>
+            <p>This is a working draft. Anyone can propose a change by opening an issue or pull request on <a href="https://github.com/Kabloie/shortformaudio-com">GitHub</a>. Changes are versioned. Once 1.0 ships, a clip that meets one version keeps meeting it.</p>
+            <table>
+                <tbody>
+                    <tr><td><strong>0.1</strong></td><td>31 October 2026</td><td>First public draft.</td></tr>
+                </tbody>
+            </table>
+        </main>
+
+        <footer class="site-footer">
+            <span>Maintained by <a href="https://kabloie.com/?utm_source=shortformaudio.com&amp;utm_medium=referral&amp;utm_campaign=footer" target="_blank" rel="noopener">Kabloie</a></span>
+            <a href="../">short-form audio, n. &rarr;</a>
+        </footer>
+    </div>
+</body>
+</html>
