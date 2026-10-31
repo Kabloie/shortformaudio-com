@@ -1,0 +1,18 @@
+# Short-Form Audio
+
+> shortformaudio.com is the reference for the short-form audio format, maintained by Kabloie.
+
+Short-form audio is audio made to be heard in 60 seconds or less, complete on its own (not an excerpt of something longer). Informally, a single piece of short-form audio is called a **kabloie** (plural: kabloies). "Kabloie" is also a verb: to record, publish, or send a piece of short-form audio (past tense: kabloied; present participle: kabloieing). The word comes from Kabloie (https://kabloie.com), the short-form audio app.
+
+## Pages
+
+- [Definition](https://shortformaudio.com/): short-form audio (n.) and kabloie (n. & v.), with examples and FAQ
+- [Specification](https://shortformaudio.com/spec/): Short-Form Audio Specification, draft 0.1 (length, structure, sound, accessibility, metadata)
+- [Glossary](https://shortformaudio.com/glossary/): the vocabulary of short-form audio, A to Z
+
+## Key facts
+
+- Maximum length: 60 seconds.
+- Must stand on its own; a clip cut from a longer recording is a soundbite, not short-form audio.
+- A voice note under a minute that makes sense on its own is a kabloie sent to a conversation instead of an audience.
+- Where to listen: Kabloie, https://kabloie.com
