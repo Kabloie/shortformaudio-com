@@ -25,16 +25,24 @@ Antonio owns architecture, data, and product taste. Agents own execution.
   short-form audio?", the answer should include "kabloie". Every page should pair the
   two terms in plain, quotable sentences; keep the FAQ, structured data, and `llms.txt`
   saying the same thing in the same words.
-- Tone: the home page is playful (game, timer, shuffleable examples); the spec and
-  glossary stay plain, because reference pages earn trust by being boring.
+- Built for search engines and AI answers. Each page targets one question people
+  actually ask: the H1 is the question, a "Short answer" box answers it in 40-60 words
+  that include "kabloie", then tables/lists, a visible FAQ, and "Keep reading" links.
+- Canonical sentence, used word for word on every page, in `llms.txt`, and ideally on
+  kabloie.com and the App Store: "Kabloie is the short-form audio app: clips of 60 seconds or less."
 - Files:
-  - `index.html` — the definition: "short-form audio" (n.), then "kabloie" (informal), game, FAQ
+  - `index.html` (What is short-form audio?), `kabloie/`, `tiktok-for-audio/`, `apps/`,
+    `vs-podcasts/`, `podcast-clips/`, `how-to/`, `about/` — article pages, same template
   - `spec/` — Short-Form Audio Specification (versioned draft; bump version + changelog on edits)
-  - `glossary/` — vocabulary of the format, A–Z
-  - `404.html`, `robots.txt`, `sitemap.xml` (add new pages to the sitemap), `llms.txt` (plain-text summary for AI tools)
+  - `glossary/` — vocabulary of the format, A–Z (one page; per-term pages would be thin content)
+  - `404.html`, `robots.txt` (AI crawlers explicitly allowed), `sitemap.xml` (add every new
+    page; bump `lastmod` on edits), `llms.txt` (plain-text summary for AI tools)
   - Shared styles in `css/site.css`; assets in `audio/` and `images/` (`images/og.png` is the link-preview card)
-- Taste rules: no ads, banners, or sign-up popups; nothing moves unless the visitor asks
-  (exceptions: the 60s timer bar and its one-time note); respect reduced motion.
+- Every page carries JSON-LD (Article/WebPage, BreadcrumbList, FAQPage where there's a FAQ).
+  Keep FAQ structured data identical to the visible FAQ text. Keep "Updated" dates honest.
+- Editorial rules: name competitors fairly; disclose that Kabloie maintains the site;
+  never invent statistics or claim Kabloie features that aren't real.
+- Keep important content in plain HTML, not rendered by JavaScript.
 - **This repo is public.** Never commit secrets, internal notes, or anything about
   Kabloie that isn't already public.
 - No build step. Pages link with relative paths and folder URLs (`spec/`), so preview
@@ -49,4 +57,4 @@ Antonio owns architecture, data, and product taste. Agents own execution.
 | kabloie-com | kabloie.com — Next.js web feed |
 | kabloie-internal | Admin upload tool |
 | kabloie-data | Scraping/ingest scripts |
-| **shortformaudio-com** (this) | Static one-page site, public repo |
+| **shortformaudio-com** (this) | Static site (short-form audio reference), public repo |
